@@ -9,11 +9,11 @@ class Alay:
     def besarkecil(self) -> str:
         text = self.text
         hasil = ""
-        for i, _ in enumerate(text):
-            if i % 2 == 0:
-                hasil += text[i].upper()
+        for alphabet, _ in enumerate(text):
+            if alphabet % 2 == 0:
+                hasil += text[alphabet].upper()
             else:
-                hasil += text[i].lower()
+                hasil += text[alphabet].lower()
         return hasil
 
     def gabungangka(self):
@@ -29,9 +29,18 @@ class Alay:
             "s": "5",
             "j ": "7",
         }
-        for i, _ in enumerate(text):
-            if text[i].lower() in kamus:
-                hasil += kamus[text[i]]
+        for alphabet, _ in enumerate(text):
+            if text[alphabet].lower() in kamus:
+                hasil += kamus[text[alphabet]]
             else:
-                hasil += text[i]
+                hasil += text[alphabet]
         return hasil
+
+    def vokal (self):
+        text = self.text
+        vocal = ['a', 'i', 'u' , 'e', 'o']
+        for alphabet in text:
+            if alphabet in vocal:
+                text = text.replace(alphabet, "i")
+        return text
+

@@ -9,3 +9,5 @@ print("================= jadi alay =================")
 print(alay.besarkecil())
 
 print(alay.gabungangka())
+
+print(alay.vokal())
