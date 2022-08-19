@@ -1,4 +1,4 @@
-
+from .kamus import kamus
 from ast import Str
 
 
@@ -36,11 +36,20 @@ class Alay:
                 hasil += text[alphabet]
         return hasil
 
-    def vokal (self):
+    def vokal(self):
         text = self.text
         vocal = ['a', 'i', 'u' , 'e', 'o']
         for alphabet in text:
             if alphabet in vocal:
                 text = text.replace(alphabet, "i")
         return text
+
+    def konversi_kata(self):
+        kata_pecah = self.text.split()
+        hasil = []
+        for kata in kata_pecah:
+            if kata in kamus:
+                kata = kamus[kata]
+            hasil.append(kata)
+        return ' '.join(hasil)
 

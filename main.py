@@ -4,6 +4,8 @@ alay = Alay()
 
 alay.text = input()
 
+print(alay.konversi_kata())
+
 print("================= jadi alay =================")
 
 print(alay.besarkecil())
